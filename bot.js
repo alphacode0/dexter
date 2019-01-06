@@ -18,7 +18,7 @@ client.on('message', message => {
   if (message.content === prefix + 'reset')
   message.channel.send('Resetting...')
   .then(msg => client.destroy())
-  .then(() => client.login('NTMxMjE3Mzc2MzA2Mzk3MjE1.DxKuhg.QnjqhkMIS16xRL4Qz_nirf_7keA'));
+  .then(() => client.login('process.env.BOT_TOKEN'));
 })
 
 client.on('message', message => {
