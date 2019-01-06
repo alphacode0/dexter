@@ -14,15 +14,13 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-    if (!message.guild) return;
-    if (message.content === prefix + 'eval')
-         let args = message.content.split(" ")
-            args.shift()
-                id = args
-const code = args.join(' ');
-const result = eval(code);
-
-message.channel.send(`\`\`\`js\n${result}\`\`\``);
+    if (!message.guild) return
+    if (message.content === prefix + 'commit') {
+        let args = message.content.split(" ")
+          args.shift()
+              id = args
+        message.channel.send(`Commiting \`${id.join(" ")}\``)
+    }
 })
 
 client.on('message', message => {
