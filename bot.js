@@ -14,6 +14,23 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
+    if (!message.guild) return;
+    if (message.content === prefix + 'bump') {
+         let args = message.content.split(" ")
+ args.shift()
+     id = args
+        var bumpEmbed = new discord.RichEmbed()
+        .setTitle('Bumped Server')
+        .setDescription(`${id.join(" ")}`)
+        .setFooter(message.author.avatarURL);
+        message.client.channels.get("531580666933149696").send(bumpEmbed);
+   }
+    else {
+        message.channel.send('Put your advertisement after `?bump`');
+    }
+})
+
+client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'reset')
   message.channel.send('Resetting...')
