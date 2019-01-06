@@ -7,7 +7,7 @@ client.on('ready', () => {
         client.user.setStatus('available')
         client.user.setPresence({
             game: {
-                name: client.guilds.size + ' ' + 'servers || ?help',
+                name: client.guilds.size + ' ' + 'servers || V1.1.0',
                 type: "WATCHING",
             }
     });
