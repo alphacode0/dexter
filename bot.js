@@ -14,6 +14,18 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
+    if (!message.guild) return;
+    if (message.content === prefix + 'eval')
+         let args = message.content.split(" ")
+            args.shift()
+                id = args
+const code = args.join(' ');
+const result = eval(code);
+
+message.channel.send(`\`\`\`js\n${result}\`\`\``);
+})
+
+client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'reset')
   message.channel.send('Resetting...')
