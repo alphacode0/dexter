@@ -14,45 +14,30 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
- if (!message.guild) return;
- if (message.content.startsWith(PREFIX + 'bump')) {
- let args = message.content.split(" ")
- args.shift()
-   let target = message.mentions.members.first(),
-     id = args
-     let promo = new discord.RichEmbed()
-     .setColor("#4999f0")
-     .setTitle('```Bumped Server```')
-     .setDescription(`${id.join(" ")}`)
-     message.client.channels.get("531580666933149696").send(promo)
-  }
-  })
-
-client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'reset')
   message.channel.send('Resetting...')
   .then(msg => client.destroy())
-  .then(() => client.login('process.env.BOT_TOKEN'));
+  .then(() => client.login('process.env.BOT_TOKEN')).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 
 client.on('message', message => {
     if (!message.guild) return;
     if (message.content === prefix + 'ping')
-    message.channel.send('`Pong!` :ping_pong:')
+    message.channel.send('`Pong!` :ping_pong:').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
   })
 
 client.on('message', message => {
     if(message.content === prefix + 'ms') 
     var msCalEmbed = new discord.RichEmbed()
     .setDescription(new Date().getTime() - message.createdTimestamp + " ms")
-    message.channel.send(msCalEmbed)
+    message.channel.send(msCalEmbed).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 
 client.on('message', message => {
     if (!message.guild) return;
     if (message.content === prefix + 'donate')
-    message.channel.send('Currently we do not have a donate page. Please be patient and keep in touch on the main server for updates regarding that')
+    message.channel.send('Currently we do not have a donate page. Please be patient and keep in touch on the main server for updates regarding that').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 
 client.on('message', message => {
@@ -64,13 +49,13 @@ client.on('message', message => {
   '`ping`,`donate`,`ms`,`bump`')
   .addField('Moderation (2)',
   '`kick`,`ban`')
-  message.author.send(helpEmbed)
+  message.author.send(helpEmbed).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'help')
   message.channel.send('`Check Your DMs` :speech_left:')
-})
+}).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 
 
 
@@ -90,7 +75,7 @@ client.on('message', message => {
           message.reply('That user isn\'t in this guild!');
         }
       } else {
-        message.reply('You didn\'t mention the user to kick!');
+        message.reply('You didn\'t mention the user to kick!').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
       }
     }
   });
@@ -111,7 +96,7 @@ client.on('message', message => {
           message.reply('That user isn\'t in this guild!');
         }
       } else {
-        message.reply('You didn\'t mention the user to ban!');
+        message.reply('You didn\'t mention the user to ban!').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
       }
     }
   });
