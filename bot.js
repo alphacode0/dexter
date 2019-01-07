@@ -14,14 +14,19 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-    if (!message.guild) return
-    if (message.content === prefix + 'commit') {
-        let args = message.content.split(" ")
-          args.shift()
-              id = args
-        message.channel.send(`Commiting \`${id.join(" ")}\``)
-    }
-})
+ if (!message.guild) return;
+ if (message.content.startsWith(PREFIX + 'bump')) {
+ let args = message.content.split(" ")
+ args.shift()
+   let target = message.mentions.members.first(),
+     id = args
+     let promo = new discord.RichEmbed()
+     .setColor("#4999f0")
+     .setTitle('```Bumped Server```')
+     .setDescription(`${id.join(" ")}`)
+     message.client.channels.get("531580666933149696").send(promo)
+  }
+  })
 
 client.on('message', message => {
   if (!message.guild) return;
