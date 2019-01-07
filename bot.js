@@ -60,8 +60,8 @@ client.on('message', message => {
   if (message.content === prefix + 'help')
   var helpEmbed = new discord.RichEmbed()
   .setTitle('Help')
-  .addField('Fun (3)',
-  '`ping`,`donate`,`ms`')
+  .addField('Fun/Misc (4)',
+  '`ping`,`donate`,`ms`,`bump`')
   .addField('Moderation (2)',
   '`kick`,`ban`')
   message.author.send(helpEmbed)
