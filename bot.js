@@ -54,8 +54,8 @@ client.on('message', message => {
 client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'help')
-  message.channel.send('`Check Your DMs` :speech_left:')
-}).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
+  message.channel.send('`Check Your DMs` :speech_left:').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
+})
 
 
 
