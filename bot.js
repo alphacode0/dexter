@@ -61,9 +61,11 @@ client.on('message', message => {
   var helpEmbed = new discord.RichEmbed()
   .setTitle('Help')
   .addField('Fun/Misc (4)',
-  '`ping`,`donate`,`ms`,`bump`')
+  '`ping`,`donate`,`ms`')
   .addField('Moderation (2)',
   '`kick`,`ban`')
+  .addField('Utility',
+  '`help`,`uptime`,`bump`')
   message.author.send(helpEmbed).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 client.on('message', message => {
@@ -72,7 +74,11 @@ client.on('message', message => {
   message.channel.send('`Check Your DMs` :speech_left:').catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 
-
+client.on('message', message => {
+    if (!message.guild) return;
+    if (message.content === prefix + 'supportserver')
+        message.channel.send('**Logs, Bumping, and Fun** --- https://discord.gg/gyh2fwu')
+})
 
 
 
@@ -117,7 +123,20 @@ client.on('message', message => {
   });
 
 
-
+client.on('message', message => {
+  if (!message.guild) return;
+  if (message.content.startsWith(prefix + 'bump')) {
+  let args = message.content.split(" ")
+  args.shift()
+      id = args
+      let bump = new discord.RichEmbed()
+      .setColor("#4999f0")
+      .setTitle('**Bumped Server**')
+      .setDescription(`${id.join(" ")}`)
+      .setFooter('Dexter Bumping');
+      message.client.channels.get("529301914018643971").send(bump)
+   }
+   })
 
 
 client.login(process.env.BOT_TOKEN)
