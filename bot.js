@@ -60,9 +60,9 @@ client.on('message', message => {
   if (message.content === prefix + 'help')
   var helpEmbed = new discord.RichEmbed()
   .setTitle('Help')
-  .addField('Fun/Misc (4)',
+  .addField('Fun/Misc',
   '`ping`,`donate`,`ms`')
-  .addField('Moderation (2)',
+  .addField('Moderation',
   '`kick`,`ban`')
   .addField('Utility',
   '`help`,`uptime`,`bump`,`supportserver`')
