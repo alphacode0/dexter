@@ -11,6 +11,21 @@ client.on('ready', () => {
                 type: "WATCHING",
             }
     });
+    message.client.channels.get("529301914018643971").send('**Update Finished**' )
+})
+
+client.on('message', message => {
+    if(!message.guild) return;
+    if (message.content === prefix + 'uptime')
+        let totalSeconds = (client.uptime / 1000);
+    let days = Math.floor(totalSeconds / 86400);
+    let hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    
+    let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+    message.channel.send(uptime)
 })
 
 client.on('message', message => {
