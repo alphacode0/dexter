@@ -65,7 +65,7 @@ client.on('message', message => {
   .addField('Moderation (2)',
   '`kick`,`ban`')
   .addField('Utility',
-  '`help`,`uptime`,`bump`')
+  '`help`,`uptime`,`bump`,`supportserver`')
   message.author.send(helpEmbed).catch(err => console.log(err).message.channel.send('**Error** ' + err + ' This has been sent to our developers').client.users.get("335227605777121281").send("There has been an error " + err));
 })
 client.on('message', message => {
