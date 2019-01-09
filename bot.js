@@ -134,7 +134,7 @@ client.on('message', message => {
       .setTitle('**Bumped Server**')
       .setDescription(`${id.join(" ")}`)
       .setFooter('Dexter Bumping');
-      message.client.channels.get("529301914018643971").send(bump)
+      message.client.channels.get("532680428432392212").send(bump)
    }
    })
 
