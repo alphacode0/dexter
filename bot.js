@@ -7,7 +7,7 @@ client.on('ready', () => {
         client.user.setStatus('available')
         client.user.setPresence({
             game: {
-                name: client.guilds.size + ' ' + 'servers || ?help',
+                name: 'PewDiePie' + ' ' + '|| ?help',
                 type: "WATCHING",
             }
     });
