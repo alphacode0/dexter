@@ -143,6 +143,11 @@ client.on('message', message => {
       message.client.channels.get("532680428432392212").send(bump)
    }
    })
+client.on('message', message => {
+    if (message.guild) return
+    if (message.content === prefix + 'bump')
+        message.channel.send('**Bumped!**')
+})
 
 
 client.login(process.env.BOT_TOKEN)
